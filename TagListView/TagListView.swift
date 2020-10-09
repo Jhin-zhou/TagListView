@@ -19,7 +19,7 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var tagTextColor: UIColor = .white {
         didSet {
             tagViews.forEach {
-                $0.textColor = textColor
+                $0.textColor = tagTextColor
             }
         }
     }
@@ -67,14 +67,14 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var tagCornerRadius: CGFloat = 0 {
         didSet {
             tagViews.forEach {
-                $0.cornerRadius = cornerRadius
+                $0.cornerRadius = tagCornerRadius
             }
         }
     }
     @IBInspectable open dynamic var tagBorderWidth: CGFloat = 0 {
         didSet {
             tagViews.forEach {
-                $0.borderWidth = borderWidth
+                $0.borderWidth = tagBorderWidth
             }
         }
     }
@@ -82,7 +82,7 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var tagBorderColor: UIColor? {
         didSet {
             tagViews.forEach {
-                $0.borderColor = borderColor
+                $0.borderColor = tagBorderColor
             }
         }
     }
