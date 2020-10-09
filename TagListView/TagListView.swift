@@ -288,11 +288,11 @@ open class TagListView: UIView {
                 x: currentRowWidth,
                 y: 0)
             tagBackgroundView.frame.size = tagView.bounds.size
-            tagBackgroundView.layer.shadowColor = shadowColor.cgColor
-            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: cornerRadius).cgPath
-            tagBackgroundView.layer.shadowOffset = shadowOffset
-            tagBackgroundView.layer.shadowOpacity = shadowOpacity
-            tagBackgroundView.layer.shadowRadius = shadowRadius
+            tagBackgroundView.layer.shadowColor = tagShadowColor.cgColor
+            tagBackgroundView.layer.shadowPath = UIBezierPath(roundedRect: tagBackgroundView.bounds, cornerRadius: tagCornerRadius).cgPath
+            tagBackgroundView.layer.shadowOffset = tagShadowOffset
+            tagBackgroundView.layer.shadowOpacity = tagShadowOpacity
+            tagBackgroundView.layer.shadowRadius = tagShadowRadius
             tagBackgroundView.addSubview(tagView)
             currentRowView.addSubview(tagBackgroundView)
             
@@ -330,15 +330,15 @@ open class TagListView: UIView {
     private func createNewTagView(_ title: String) -> TagView {
         let tagView = TagView(title: title)
         
-        tagView.textColor = textColor
+        tagView.textColor = tagTextColor
         tagView.selectedTextColor = selectedTextColor
         tagView.tagBackgroundColor = tagBackgroundColor
         tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
         tagView.selectedBackgroundColor = tagSelectedBackgroundColor
         tagView.titleLineBreakMode = tagLineBreakMode
-        tagView.cornerRadius = cornerRadius
-        tagView.borderWidth = borderWidth
-        tagView.borderColor = borderColor
+        tagView.cornerRadius = tagCornerRadius
+        tagView.borderWidth = tagBorderWidth
+        tagView.borderColor = tagBorderColor
         tagView.selectedBorderColor = selectedBorderColor
         tagView.paddingX = paddingX
         tagView.paddingY = paddingY
